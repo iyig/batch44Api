@@ -37,12 +37,14 @@ public class GetRequest16 extends JsonPlaceHolderBaseUrl {
     expectedData.put("completed",false);
 
     System.out.println("EXPECTED DATA:"+ expectedData);
-
+//EXPECTED DATA{id=7, completed=false, title=illo expedita consequatur quia in, userId=1}
    //3) Request ve Response
 
     // https://jsonplaceholder.typicode.com
+
     Response response=given().spec(spec04).when().get("/{bir}/{iki}");
-    //"/{bir}/{iki}"->https://jsonplaceholder.typicode.com/todos/7
+
+    //"/{bir}/{iki}"->adrese bunu ekle /todos/7  https://jsonplaceholder.typicode.com/todos/7
 
    // response.prettyPrint();
      //DATAYI JSON'DAN -> JAVA'YA De-Serialization
