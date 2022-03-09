@@ -1,7 +1,6 @@
 package get_http_request;
 
-import Test_data.HerOkuAppTestData;
-
+import test_data.HerOkuAppTestData;
 import base_url.HerOkuAppBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -34,7 +33,7 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
     @Test
     public void test22(){
         //1) URL OLUSTUR
-        spec05.pathParams("first", "booking", "second", 17);
+        spec05.pathParams("first", "booking", "second", 25);
 
         //2) EXPECTED DATA OLUSTUR
         HerOkuAppTestData expectedObje = new HerOkuAppTestData();
@@ -93,4 +92,3 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
                 json.getString("bookingdates.checkout"));
     }
 }
-

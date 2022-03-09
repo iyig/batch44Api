@@ -1,8 +1,7 @@
 package get_http_request;
 
-import Test_data.JsonPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 import base_url.JsonPlaceHolderBaseUrl;
-import groovy.lang.DelegatesTo;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
