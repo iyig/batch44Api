@@ -31,9 +31,11 @@ public class GetRequest21TestData extends JsonPlaceHolderBaseUrl {
     //1) URL OLUSTUR
     spec04.pathParams("1","todos","2" ,2);
 
-//2)EXPECTED DATAOLUSTUR
+   //2)EXPECTED   DATA   OLUSTUR
 JsonPlaceHolderTestData expectedDataObje= new JsonPlaceHolderTestData();
-    HashMap<String, Object> expectedData=(HashMap<String,Object>) expectedDataObje.setUpTestData();
+
+     HashMap<String, Object> expectedData=(HashMap<String,Object>) expectedDataObje.setUpTestData();
+
     System.out.println("Test Datanın icindeki Expected Data:"+expectedData);
 //{Server=cloudflare,
 // completed=false,
