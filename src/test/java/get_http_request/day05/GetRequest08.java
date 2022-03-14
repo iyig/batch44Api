@@ -3,6 +3,7 @@ package get_http_request.day05;
 import base_url.DummyBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -53,5 +54,9 @@ public class GetRequest08 extends DummyBaseUrl {
         //4) En son calisanin adini konsola yazdiralim
         System.out.println(json.getString("data[-1].employee_name"));
         //System.out.println(json.getString("data.employee_name[-1]"));
+
+        Assert.assertEquals(200, response.getStatusCode());
+        Assert.assertEquals("Ashton Cox",json.getString("data[2].employee_name"));
+        Assert.assertEquals("Doris Wildir", json.getString("data[-1].employee_name"));
     }
 }

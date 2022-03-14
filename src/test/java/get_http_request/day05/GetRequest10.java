@@ -49,6 +49,7 @@ public class GetRequest10 extends DummyBaseUrl {
 
         //Toplam 24 tane çalışan olduğunu,
         Assert.assertEquals(24,json.getList("data.id").size());
+        System.out.println(json.getList("data.id").size());
 
         //"Rhona Davidson" ın employee lerden biri olduğunu
         Assert.assertTrue(json.getList("data.employee_name").contains("Rhona Davidson"));

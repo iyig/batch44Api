@@ -43,12 +43,8 @@ public class PostRequest02 extends DummyBaseUrl {
 
         //2) EXPECTED DATA
         DummyTestData obje = new DummyTestData();
-
-        //Reqest icin
-        HashMap<String, Object> requestBodyMap = obje.setUpRequestBody();
-
-        //Expected Data
-        HashMap<String, Object> expectedDataMap = obje.setUpExpectedData();
+        HashMap<String, Object> requestBodyMap = obje.setUpRequestBody(); // -> Request icin
+        HashMap<String, Object> expectedDataMap = obje.setUpExpectedData(); // -> Expected Data icin
         System.out.println("expectedDataMap = " + expectedDataMap);
 
         //3) REQUEST VE RESPONSE

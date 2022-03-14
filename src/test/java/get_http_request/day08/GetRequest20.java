@@ -48,7 +48,7 @@ public class GetRequest20 extends JsonPlaceHolderBaseUrl {
         //4) DOGRULAMA
         //1. YOL MATCHERS CALASS
         response.then().assertThat()
-                .statusCode((Integer) expectedData.get("statusCode"))
+                .statusCode((Integer)expectedData.get("statusCode"))
                 .headers("via", equalTo(expectedData.get("via")),
                         "Server", equalTo(expectedData.get("Server")))
                 .body("userId", equalTo(expectedData.get("userId")),

@@ -43,20 +43,24 @@ public class GetRequest19 extends DummyBaseUrl {
 
         JsonPath json = response.jsonPath();
 
+        //10’dan büyük tüm id'leri ekrana yazdırın
         List<Integer> idList = json.getList("data.findAll{it.id>10}.id");
-        //List<Integer> idList = json.getList("data.id.findAll{it>10}"); bu şekilde de çalışır.
         System.out.println("ID List: " + idList);
+
+        //List<Integer> idList = json.getList("data.id.findAll{it>10}"); bu şekilde de çalışır.
         //Groovy Java platformu üzerinde çalışam bir bilgisayar dilidir.
         //Groovy ile loop kullanmadan response'dan gelen değerleri bir şarta göre alabiliriz.
 
+        Assert.assertEquals(14, idList.size());  //10’dan büyük 14 id olduğunu,
 
-        //3) 30’dan küçük tüm yaşları ekrana yazdırın ve bu yaşların içerisinde en büyük yaşın 23 olduğunu
+        //3) 30’dan küçük tüm yaşları ekrana yazdırın ve bu
         List<Integer> yasListesi = json.getList("data.findAll{it.employee_age<30}.employee_age");
         System.out.println(yasListesi);
 
+        // yaşların içerisinde en büyük yaşın 23 olduğunu
         Collections.sort(yasListesi);
         Assert.assertEquals((Integer)23, yasListesi.get(yasListesi.size()-1));
-
+        //Assert.assertEquals(23,(int) yasListesi.get(yasListesi.size()-1));
         //Assert.assertTrue(yasListesi.get(yasListesi.size()-1)==23);
 
         //4) Maası 350000 den büyük olan tüm employee name'leri ekrana yazdırın

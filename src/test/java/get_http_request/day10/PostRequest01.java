@@ -70,12 +70,12 @@ public class PostRequest01 extends HerOkuAppBaseUrl {
         JsonPath json = response.jsonPath();
 
         response.then().assertThat().statusCode(200);
-        // (expectedRequestData.getstring("firstname")->TEST DATA İCERİNDEKİ firstname
-
+        // (expectedRequestData.getString("firstname")->TEST DATA İCERİSİNDEKİ firstname
+        //json.getString(booking.firstname")-> body deki firstname
         Assert.assertEquals(expectedRequestData.getString("firstname"), json.getString("booking.firstname"));
-        Assert.assertEquals(expectedRequestData.getString("laslname"), json.getString("booking.lastname"));
-        Assert.assertEquals(expectedRequestData.getString("totalprice"), json.getString("booking.totalprice"));
-        Assert.assertEquals(expectedRequestData.getString("depositpaid"), json.getString("booking.depositpaid"));
+        Assert.assertEquals(expectedRequestData.getString("lastname"), json.getString("booking.lastname"));
+        Assert.assertEquals(expectedRequestData.getInt("totalprice"), json.getInt("booking.totalprice"));
+        Assert.assertEquals(expectedRequestData.getBoolean("depositpaid"), json.getBoolean("booking.depositpaid"));
 
 
         Assert.assertEquals(expectedRequestData.getJSONObject("bookingdates").getString("checkin"),

@@ -21,7 +21,7 @@ public class GetRequest06 {
     @Test
     public void test06(){
 
-        Response response = given().when().get("https://restful-booker.herokuapp.com/booking/4");
+        Response response = given().when().get("https://restful-booker.herokuapp.com/booking/5");
 
         response.prettyPrint();
 
