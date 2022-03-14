@@ -39,7 +39,7 @@ String titleArananKelime="Spend less";
 if (actualTitle.contains((titleArananKelime))) {
     System.out.println("Title testi PASSED");
 }else {
-    System.out.println("Title testi FAilED\nActual title: "+ actualTitle);
+     System.out.println("Title testi FAilED\nActual title: "+ actualTitle);
     //6- Gift Cards sekmesine basin
 
     driver.findElement(By.xpath("//a[text()='Gift Cards']")).click();

@@ -8,13 +8,13 @@ public class C06_ManageWindow {
         System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
        WebDriver driver =new ChromeDriver();
 
-//2. Amazon soyfasina gidelim. https://www.amazon.com/
+//2. Amazon sayfasina gidelim. https://www.amazon.com/
        driver.get("https://www.amazon.com");
 //3. Sayfanin konumunu ve boyutlarini yazdirin
-    System.out.println(driver.manage().window().getPosition());
+     System.out.println(driver.manage().window().getPosition());
         System.out.println(driver.manage().window().getSize());
 //4. Sayfayi simge durumuna getirin
-   driver.manage().window().minimize();
+    driver.manage().window().minimize();
 //5. simge durumunda 3 saniye bekleyip sayfayi maximize yapin
      Thread.sleep(3000);
      driver.manage().window().maximize();
@@ -22,7 +22,7 @@ public class C06_ManageWindow {
         System.out.println("Maximize durumda position : "+driver.manage().window().getPosition());
         System.out.println("Maximize durumunda size : "+driver.manage().window().getSize());
 //7. Sayfayi fullscreen yapin
-      Thread.sleep(3000);
+       Thread.sleep(3000);
        driver.manage().window().fullscreen();
 //8. Sayfanin konumunu ve boyutlarini fullscreen durumunda yazdirin
         System.out.println("Fullscreen durumda position : "+driver.manage().window().getPosition());

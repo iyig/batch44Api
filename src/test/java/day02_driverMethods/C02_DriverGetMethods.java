@@ -13,6 +13,7 @@ public class C02_DriverGetMethods {
 
         System.out.println(driver.getCurrentUrl()); // sayfanin adresini getirir
 
+
         System.out.println(driver.getWindowHandle());//CDWindow-0856665367EB1E1B782DB502DF6CC3B8
 
         System.out.println(driver.getPageSource()); //web sayfasini tüm kodlari

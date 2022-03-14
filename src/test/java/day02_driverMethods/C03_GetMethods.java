@@ -4,15 +4,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class C03_GetMethods {
     //1. Yeni bir package olusturalim : day01
     //2. Yeni bir class olusturalim : C01_GetMethods
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","src/driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         //3. Amazon sayfasina gidelim. https://www.amazon.com/
-        driver.get("https://www.amazon.com/");
+
+         driver.get("https://www.amazon.com/");
         //4. Sayfa basligini(title) yazdirin
         System.out.println(driver.getTitle());
         //5. Sayfa basliginin “Amazon” icerdigini test edin
-        String actualTitle=driver.getTitle();
+
+         String actualTitle=driver.getTitle();
         String arananKelime="Amazon";
         if (actualTitle.contains(arananKelime)){
             System.out.println("Title testi PASS");
