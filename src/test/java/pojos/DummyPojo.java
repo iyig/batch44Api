@@ -19,12 +19,12 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
 }
 
 */
-    //1)
+    //1) private değişkenleri olustur
     private String status;
     private Data data;
     private String message;
 
-    //2)
+    //2) getter ve setter
 
     public String getStatus() {
         return status;
@@ -50,7 +50,7 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
         this.message = message;
     }
 
-    //3)
+    //3)Parametreli ve parametresiz Constructor
 
     public DummyPojo() {
     }

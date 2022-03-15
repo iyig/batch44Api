@@ -3,11 +3,11 @@ package pojos;
 public class Data {
 /*
 "data": {
-                 "id": 1,
-                 "employee_name": "Tiger Nixon",
-                  "employee_salary": 320800,
-                  "employee_age": 61,
-                  "profile_image": ""
+           "id": 1,
+           "employee_name": "Tiger Nixon",
+           "employee_salary": 320800,
+           "employee_age": 61,
+           "profile_image": ""
    }
 */
 
@@ -71,11 +71,10 @@ public class Data {
         this.employee_age = employee_age;
         this.profile_image = profile_image;
     }
-
-public Data(){
+    public Data(){
 
 }
-
+//4) toString
     @Override
     public String toString() {
         return "Data{" +
