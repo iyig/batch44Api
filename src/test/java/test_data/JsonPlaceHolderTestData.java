@@ -47,12 +47,11 @@ https://jsonplaceholder.typicode.com/todos/198 URL ine aşağıdaki body gönerd
 }
  */
 
-
-public JSONObject setUpPutDate(){
-   JSONObject expectedRequest = new JSONObject();
-   expectedRequest.put("userId", 21);
-   expectedRequest.put("title", "Wash the dishes");
-   expectedRequest.put("completed", false);
+    public JSONObject setUpPutData() {
+        JSONObject expectedRequest = new JSONObject();
+         expectedRequest.put("userId", 21);
+         expectedRequest.put("title", "Wash the dishes");
+         expectedRequest.put("completed", false);
    return  expectedRequest;
 }
     /*
@@ -86,4 +85,6 @@ public JSONObject setUpPutDate(){
         expectedData.put("id", 198);
         return expectedData;
     }
+
+
 }
