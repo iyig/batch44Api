@@ -35,7 +35,7 @@ Olduğunu Object Mapper kullanarak test edin.
     @Test
     public void test() {
         //1) URL OLUSTUR
-        spec05.pathParams("param1", "booking", "param2", 13);
+        spec05.pathParams("param1", "booking", "param2", 12);
 
         //2) EXPECTED DATA
         String jsonData = "{\n" +

@@ -1,5 +1,9 @@
 package get_http_request.day15;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Country {
 
 

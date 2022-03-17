@@ -34,7 +34,7 @@ Olduğunu Object Mapper kullanarak test edin
 
         //2) EXPECTED DATA
 
-        String jsonData = " {\n" +
+        String jsonData = "{\n" +
                 " \"userId\": 10,\n" +
                 " \"id\": 198,\n" +
                 " \"title\": \"quis eius est sint explicabo\",\n" +
@@ -62,7 +62,7 @@ Olduğunu Object Mapper kullanarak test edin
         System.out.println("actualData = " + actualData);
 
         Assert.assertEquals(expectedData.get("userId"), actualData.get("userId"));
-        Assert.assertEquals(expectedData.get("id"), actualData.get("title"));
+        Assert.assertEquals(expectedData.get("id"), actualData.get("id"));
         Assert.assertEquals(expectedData.get("title"), actualData.get("title"));
         Assert.assertEquals(expectedData.get("completed"), actualData.get("completed"));
 

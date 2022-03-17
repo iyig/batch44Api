@@ -1,7 +1,9 @@
 package get_http_request.day15;
 
-import java.util.PrimitiveIterator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
 /*
@@ -16,7 +18,7 @@ public class User {
         “imageUrl”: null,
         “resetDate”: null
     }
-*/
+      */
    private int id;
    private String login;
    private String firstnName;
@@ -104,7 +106,7 @@ public class User {
     }
 
 //3
-public User(){
+   public User(){
 
 }
 
