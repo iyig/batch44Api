@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class C05_NavigationMethods {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","src/driver/chromedriver.exe");
+
         WebDriver driver = new ChromeDriver();
         //        1. Yeni bir Class olusturalim.C02_NavigationMethods
 //        2. Youtube ana sayfasina gidelim . https://www.youtube.com
@@ -20,8 +21,12 @@ public class C05_NavigationMethods {
 //        7. Sayfayi tam ekran yapalim
         driver.manage().window().maximize();
 //        8. Sayfayi kapatalim / Tum sayfalari kapatalim
+
+
         driver.close(); //quit varsa acık olan tum sayfaları kapatır
-                        // close ise sadece driverin son bulunduğu sayfayı kapatır
+        // close ise sadece driverin son bulunduğu sayfayı kapatır
     }
-}
+
+
+    }
 
