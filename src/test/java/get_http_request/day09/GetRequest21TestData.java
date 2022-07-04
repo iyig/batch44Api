@@ -1,5 +1,4 @@
 package get_http_request.day09;
-
 import test_data.JsonPlaceHolderTestData;
 import base_url.JsonPlaceHolderBaseUrl;
 import io.restassured.path.json.JsonPath;
@@ -10,7 +9,8 @@ import org.junit.Test;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
+
 
 public class GetRequest21TestData extends JsonPlaceHolderBaseUrl {
 
@@ -31,6 +31,7 @@ public class GetRequest21TestData extends JsonPlaceHolderBaseUrl {
     //1) URL OLUSTUR
     spec04.pathParams("1","todos","2" ,2);
 
+
    //2)EXPECTED   DATA   OLUSTUR
 JsonPlaceHolderTestData expectedDataObje= new JsonPlaceHolderTestData();
 
@@ -45,7 +46,11 @@ JsonPlaceHolderTestData expectedDataObje= new JsonPlaceHolderTestData();
 // via=1.1 vegur}
     //3) Request ve Response
 
-    Response response = given().spec(spec04).when().get("/{1}/{2}");
+    Response response = given().
+            spec(spec04).
+            when().
+            get("/{1}/{2}");
+
     response.prettyPrint();
 
     //DOGRULAMA
@@ -57,7 +62,13 @@ JsonPlaceHolderTestData expectedDataObje= new JsonPlaceHolderTestData();
             "title", equalTo(expectedData.get("title")),
             "completed", equalTo(expectedData.get("completed")));
 
+
+
+
+
     //2. YOL JSON PATH
+
+ /*
     JsonPath json = response.jsonPath();
 
         Assert.assertEquals(expectedData.get("statusCode"), response.statusCode());
@@ -67,14 +78,21 @@ JsonPlaceHolderTestData expectedDataObje= new JsonPlaceHolderTestData();
         Assert.assertEquals(expectedData.get("userId"), json.getInt("userId"));
         Assert.assertEquals(expectedData.get("title"), json.getString("title"));
         Assert.assertEquals(expectedData.get("completed"), json.getBoolean("completed"));
+*/
+
+
 
     //3. YOL DE-SERiALiAZATiON
+
     HashMap<String, Object> actualData = response.as(HashMap.class);
         System.out.println(actualData);
 
         Assert.assertEquals(expectedData.get("userId"), actualData.get("userId"));
         Assert.assertEquals(expectedData.get("title"), actualData.get("title"));
         Assert.assertEquals(expectedData.get("completed"), actualData.get("completed"));
+
+
+
 
 }
 }

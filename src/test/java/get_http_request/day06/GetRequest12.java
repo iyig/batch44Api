@@ -12,6 +12,8 @@ public class GetRequest12 extends Authentication {
     String endPoint = "http://www.gmibank.com/api/tp-customers";
 @Test
     public void test12(){
+
+   /*
     Response response = given().header("Authorization", "Bearer " + generateToken())
             .when()
             .get(endPoint)
@@ -20,7 +22,12 @@ public class GetRequest12 extends Authentication {
             .response();
 
     response.prettyPeek();
+  */
+    Response response = given()
+            .header("Authorization","Bearer " + generateToken())
+            .when().get(endPoint);
 
+    response.prettyPrint();
     response.then().assertThat().contentType(ContentType.JSON).statusCode(200);
 }
 

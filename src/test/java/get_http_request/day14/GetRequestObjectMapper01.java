@@ -28,7 +28,7 @@ Olduğunu Object Mapper kullanarak test edin
 */
 
     @Test
-    public void test(){
+    public void test() {
         //1) URL OLUŞTUR
         spec04.pathParams("param1", "todos", "param2", 198);
 
@@ -42,38 +42,22 @@ Olduğunu Object Mapper kullanarak test edin
                 " }";
 
         Map<String, Object> expectedData = JsonUtil.convertJsonToJava(jsonData, Map.class);
-        System.err.println("jsonData = " + jsonData);
+       // System.err.println("jsonData = " + jsonData);
         System.out.println("expectedData = " + expectedData);
 
         //3) REQUEST VE RESPONSE
-        Response response = given().contentType(ContentType.JSON).spec(spec04)
-                .when().get("/{param1}/{param2}");
-
-        response.prettyPrint();
-
-        //4) DOĞRULAMA
+Response response= given().contentType(ContentType.JSON).spec(spec04).when().get("/{param1}/{param2}");
+response.prettyPrint();
+        //4)
         //De-Serialization
         //Onceki derslerde ogrendigimiz yöntem
-        HashMap<String, Object> actualData2 = response.as(HashMap.class);
-        System.out.println("actualData2 = " + actualData2);
+//JsonUtill reuseable classını kullanarak de-serialization yaptık.
 
-        //JsonUtill reuseable classını kullanarak de-serialization yaptık.
-        Map<String, Object> actualData = JsonUtil.convertJsonToJava(response.asString(), Map.class);
-        System.out.println("actualData = " + actualData);
-
-        Assert.assertEquals(expectedData.get("userId"), actualData.get("userId"));
-        Assert.assertEquals(expectedData.get("id"), actualData.get("id"));
-        Assert.assertEquals(expectedData.get("title"), actualData.get("title"));
-        Assert.assertEquals(expectedData.get("completed"), actualData.get("completed"));
-
-        //Matchers
-        response.then().
-                assertThat().
-                statusCode(200).
-                body("userId", equalTo(expectedData.get("userId"))
-                        ,"id",equalTo(expectedData.get("id"))
-                        ,"title",equalTo(expectedData.get("title"))
-                        ,"completed",equalTo(expectedData.get("completed")));
-
+      Map<String,Object>actualData=  JsonUtil.convertJsonToJava(response.asString(),Map.class);
+        System.out.println(actualData);
+        Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
+   Assert.assertEquals(expectedData.get("id"), actualData.get("id"));
+   Assert.assertEquals(expectedData.get("title"), actualData.get("title"));
+Assert.assertEquals(expectedData.get("completed"), actualData.get("completed"));
     }
 }

@@ -62,6 +62,7 @@ https://jsonplaceholder.typicode.com/todos/198 URL ine aşağıdaki body gönerd
         */
     //PatchRequest01
     public JSONObject setUpPatchRequestData(){
+
         JSONObject requestData = new JSONObject();
         requestData.put("title", "Batch44");
         return requestData;
@@ -78,6 +79,7 @@ https://jsonplaceholder.typicode.com/todos/198 URL ine aşağıdaki body gönerd
 
     //PatchRequest01
     public JSONObject setUpPatchExpectedData(){
+
         JSONObject expectedData = new JSONObject();
         expectedData.put("userId", 10);
         expectedData.put("title", "Batch44");

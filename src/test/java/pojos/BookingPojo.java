@@ -24,7 +24,8 @@ public class BookingPojo {
     private String lastname;
     private int totalprice;
     private boolean depositpaid;
-    private BookingDatesPojo bookingDatesPojo;
+    private BookingDatesPojo bookingDatesPojo;//Daha önce oluşturduğumuz pojo kalıbını datatype olarak belirterek
+                                                // yeni pojonun icerine gömmuş oldum
 
    //2) getter ve Setter
 

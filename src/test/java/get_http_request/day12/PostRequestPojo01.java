@@ -40,7 +40,10 @@ Status kodun 201, response body 'nin ise
     System.out.println("expectedData=" + expectedData);
 
     //REQUEST VE RESPONSE
-    Response response = given().contentType(ContentType.JSON).spec(spec04).body(expectedData).when().post("/{first}");
+    Response response = given().contentType(ContentType.JSON).spec(spec04)
+            .body(expectedData)
+            .when()
+            .post("/{first}");
 
     response.prettyPrint();
 
@@ -48,7 +51,7 @@ Status kodun 201, response body 'nin ise
 
     //DE-SERİLİZATİON
 
-
+      // Map'e gerek yok
     JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
 
     Assert.assertEquals(201, response.getStatusCode());

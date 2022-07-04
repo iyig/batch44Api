@@ -33,6 +33,8 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
     @Test
     public void test22(){
         //1) URL OLUSTUR
+
+
         spec05.pathParams("first", "booking", "second", 25);
 
         //2) EXPECTED DATA OLUSTUR
@@ -53,7 +55,10 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
         Response response = given().spec(spec05).when().get("/{first}/{second}");
         response.prettyPrint();
 
+
+
         //4) DOGRULAMA
+
         //1. Yol De-Serialization
 
         HashMap<String, Object> actualData= response.as(HashMap.class);
@@ -79,9 +84,14 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
                 ((Map<?, ?>) actualData.get("bookingdates")).get("checkout"));
 
 
-        //2. YOL JSON PATH
-        JsonPath json = response.jsonPath();
-        Assert.assertEquals(expectedTestDataMap.get("firstname"), json.getString("firstname"));
+
+
+//2. YOL JSON PATH
+       JsonPath json= response.jsonPath();
+
+
+
+       Assert.assertEquals(expectedTestDataMap.get("firstname"), json.getString("firstname"));
         Assert.assertEquals(expectedTestDataMap.get("lastname"), json.getString("lastname"));
         Assert.assertEquals(expectedTestDataMap.get("totalprice"), json.getInt("totalprice"));
         Assert.assertEquals(expectedTestDataMap.get("depositpaid"), json.getBoolean("depositpaid"));
@@ -90,5 +100,8 @@ public class GetRequest22 extends HerOkuAppBaseUrl {
                 json.getString("bookingdates.checkin"));
         Assert.assertEquals(((Map<?, ?>) expectedTestDataMap.get("bookingdates")).get("checkout"),
                 json.getString("bookingdates.checkout"));
+
+
     }
+
 }

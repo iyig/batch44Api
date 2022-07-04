@@ -29,7 +29,11 @@ public class GetRequest19 extends DummyBaseUrl {
         spec02.pathParams("1", "api", "2", "v1", "3", "employees");
 
         //http://dummy.restapiexample.com requesten önceki adresimiz.
-        Response response = given().spec(spec02).when().get("/{1}/{2}/{3}");
+        Response response = given().
+                spec(spec02).
+                when().
+                get("/{1}/{2}/{3}");
+
         //"/{1}/{2}/{3}" -> /api/v1/employees
         //http://dummy.restapiexample.com/api/v1/employees
 
@@ -67,6 +71,8 @@ public class GetRequest19 extends DummyBaseUrl {
         //ve bunların içerisinde "Charde Marshall" olduğunu test edin
 
         List<Integer>salaryList=json.getList("data.findAll{it.employee_salary>350000}.employee_name");
+       // List<String>salaryList=json.getList("data.findAll{it.employee_salary>350000}.employee_name");
+
         System.out.println(salaryList);
 
         Assert.assertTrue(salaryList.contains("Charde Marshall"));

@@ -25,7 +25,8 @@ public class PostRequestPojo02 extends HerOkuAppBaseUrl {
         BookingDatesPojo bokingDates = new BookingDatesPojo("2022-03-01", "2022-03-11");
         System.out.println("bokingDates = " + bokingDates);
 
-        BookingPojo bookingPojo = new BookingPojo("Ali", "Can", 500, true, bokingDates);
+        BookingPojo bookingPojo = new BookingPojo("Ali", "Can", 500,
+                true, bokingDates);
         System.out.println("bookingPojo = " + bookingPojo);
 
         //3) RESPONSE AND REQUEST
@@ -44,8 +45,8 @@ public class PostRequestPojo02 extends HerOkuAppBaseUrl {
 
         Assert.assertEquals(200, response.getStatusCode());
 
-        Assert.assertEquals(bookingPojo.getFirstname(),actualData.getBookingPojo());
-        Assert.assertEquals(bookingPojo.getLastname(), actualData.getBookingPojo());
+        Assert.assertEquals(bookingPojo.getFirstname(),actualData.getBookingPojo().getFirstname());
+        Assert.assertEquals(bookingPojo.getLastname(), actualData.getBookingPojo().getLastname());
         Assert.assertEquals(bookingPojo.getTotalprice(), actualData.getBookingPojo().getTotalprice());
         Assert.assertEquals(bookingPojo.isDepositpaid(), actualData.getBookingPojo().isDepositpaid());
 

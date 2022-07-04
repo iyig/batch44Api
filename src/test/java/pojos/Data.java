@@ -1,26 +1,28 @@
 package pojos;
 
-public class Data {
-/*
-"data": {
-           "id": 1,
-           "employee_name": "Tiger Nixon",
-           "employee_salary": 320800,
-           "employee_age": 61,
-           "profile_image": ""
-   }
-*/
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-//1) private değişkenleri olustur
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Data {
+    /*
+     "data": {
+                "id": 1,
+                "employee_name": "Tiger Nixon",
+               "employee_salary": 320800,
+               "employee_age": 61,
+               "profile_image": ""
+            }
+     */
+
+    //1) private değişkenleri olustur.
 
     private int id;
     private String employee_name;
-    private String employee_salary;
+    private int employee_salary;
     private int employee_age;
-    private String profile_image;
+    private  String profile_image;
 
-//2) getter ve setter
-
+    //2) getter and setter
 
     public int getId() {
         return id;
@@ -38,11 +40,11 @@ public class Data {
         this.employee_name = employee_name;
     }
 
-    public String getEmployee_salary() {
+    public int getEmployee_salary() {
         return employee_salary;
     }
 
-    public void setEmployee_salary(String employee_salary) {
+    public void setEmployee_salary(int employee_salary) {
         this.employee_salary = employee_salary;
     }
 
@@ -62,25 +64,27 @@ public class Data {
         this.profile_image = profile_image;
     }
 
-//3)Parametresiz ve Parametreli
+    //3) Parametreli ve Parametresiz Constructor
 
-    public Data(int id, String employee_name, String employee_salary, int employee_age, String profile_image) {
+    public Data() {
+    }
+
+    public Data(int id, String employee_name, int employee_salary, int employee_age, String profile_image) {
         this.id = id;
         this.employee_name = employee_name;
         this.employee_salary = employee_salary;
         this.employee_age = employee_age;
         this.profile_image = profile_image;
     }
-    public Data(){
 
-}
-//4) toString
+    //4) toString()
+
     @Override
     public String toString() {
         return "Data{" +
                 "id=" + id +
                 ", employee_name='" + employee_name + '\'' +
-                ", employee_salary='" + employee_salary + '\'' +
+                ", employee_salary=" + employee_salary +
                 ", employee_age=" + employee_age +
                 ", profile_image='" + profile_image + '\'' +
                 '}';

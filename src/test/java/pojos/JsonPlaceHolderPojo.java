@@ -11,7 +11,7 @@ https://jsonplaceholder.typicode.com/todos url 'ine bir request gönderildiğind
 "completed": false
 }
 */
-    //1) Değişekleri private olarak tanımlayacağız.
+    //1) Değişkenleri private olarak tanımlayacağız.
     private int userId;
     private int id;
     private String title;

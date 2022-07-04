@@ -52,7 +52,7 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
 
         //3) REQUEST VE RESPONSE OLUSTUR
         Response response = given().spec(spec02).contentType(ContentType.JSON).when().get("/{bir}/{iki}/{uc}");
-        //response.prettyPrint();
+        response.prettyPrint();
 
         //4) DOGRULAMA
         //De-Serialization
@@ -75,9 +75,11 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
         Assert.assertEquals(expectedTestDataMap.get("sondanucuncucalisaninmaasi"),
                 ((Map)((List)actualDataMap.get("data")).get(((List)actualDataMap.get("data")).size()-3)).get("employee_salary"));
 
-        //2. Yol
 
-        int dataSize = ((List<?>) actualDataMap.get("data")).size();
+        //2. Yol
+   // önce actual datadan bize dönen listin size ını almalıyız
+
+       int dataSize = ((List<?>) actualDataMap.get("data")).size();
 
         Assert.assertEquals(expectedTestDataMap.get("sondanucuncucalisaninmaasi"),
                 ((Map)((List<?>) actualDataMap.get("data")).get(dataSize-3)).get("employee_salary"));
@@ -103,6 +105,10 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
                "profile_image": ""}
         */
 
+
+
+
+
         Assert.assertEquals(((Map) expectedTestDataMap.get("onuncucalisan")).get("employee_name"),
                 ((Map)((List) actualDataMap.get("data")).get(9)).get("employee_name"));
 
@@ -114,5 +120,12 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
 
         Assert.assertEquals(((Map) expectedTestDataMap.get("onuncucalisan")).get("profile_image"),
                 ((Map)((List) actualDataMap.get("data")).get(9)).get("profile_image"));
+
+
+
+
+
+
+
     }
 }
