@@ -55,6 +55,7 @@ response.prettyPrint();
 
       Map<String,Object>actualData=  JsonUtil.convertJsonToJava(response.asString(),Map.class);
         System.out.println(actualData);
+
         Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
    Assert.assertEquals(expectedData.get("id"), actualData.get("id"));
    Assert.assertEquals(expectedData.get("title"), actualData.get("title"));

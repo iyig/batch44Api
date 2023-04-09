@@ -16,9 +16,9 @@ API DERSİNDE NELER ÖĞRENDİNİZ?
         http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matchers.html
 
         Matchers.equalto(): Key-Value şeklinde girilen datanın, eşit olduğunu doğrulamak için kullanılır.
-        Matchers.hasSize(): Datanın size'ını doğrulamak için kullanılır.
-        Matchers.hasItem(): Girilen tek bir data'yı doğrulamak için kullanılır.
-        Matchers.hasItems(): Girilen birden fazla datayı doğrulamak için kullanılır.
+        Matchers.hasSize(): Datanın size'ını doğrulamak için kullanılır.eleman sayısını assert eder
+        Matchers.hasItem(): Girilen tek bir data'yı doğrulamak için kullanılır.contains() methodu gibi objenin içerilip içerilmediğini asssert eder
+        Matchers.hasItems(): Girilen birden fazla datayı doğrulamak için kullanılır.containsAll() methodu gibi bir den fazla objenin içerilip içerilmediğni assert eder
 
         * De-Serialization: JSON formatını Javaya dönüştürme
         HashMap<String, Object> actualData = response.as(HashMap.class);

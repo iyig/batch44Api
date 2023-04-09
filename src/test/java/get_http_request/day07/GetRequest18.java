@@ -23,6 +23,7 @@ public class GetRequest18 extends GMIBankBaseUrl {
            "mobilePhoneNumber": "909-162-8114",
            "city": "St Louis",
            "ssn": "108-53-6655"
+
            1) MATCHERS CLASS
            2) JSON PATH
            3) De-Serialization

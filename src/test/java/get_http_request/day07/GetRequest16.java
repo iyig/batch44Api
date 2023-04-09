@@ -53,8 +53,11 @@ public class GetRequest16 extends JsonPlaceHolderBaseUrl {
 
     Map<String, Object> actualData = response.as(HashMap.class); //De-Serialization
 
+
+//JSON DATASININ MAP'E DÖNÜSMÜS HALİ
+    //ACTUAL DATA{id=7, completed=false, title=illo expedita consequatur quia in, userId=1}
     System.out.println("ACTUAL DATA" + actualData);
-//ACTUAL DATA{id=7, completed=false, title=illo expedita consequatur quia in, userId=1}
+
 
     Assert.assertEquals(expectedData.get("userId"), actualData.get("userId"));
 Assert.assertEquals(expectedData.get("id") , actualData.get("id"));

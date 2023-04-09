@@ -23,17 +23,17 @@ ve checkout date'in 2020-09-30 oldugunu test edin
      */
 
 
-    String url = "https://restful-booker.herokuapp.com/booking/7";
+    String url = "https://restful-booker.herokuapp.com/booking/4756";
 
     Response response = given().when().get(url);
     response.prettyPrint();
 
-response.then().contentType("application/json").statusCode(200);
+   response.then().contentType("application/json").statusCode(200);
 
-response.then().body("firstname", equalTo("Mary")
-                     , "lastname", equalTo("Brown")
-                      ,"bookingdates.checkin", equalTo("2020-03-27")
-                      ,"bookingdates.checkout", equalTo("2020-08-19"));
+  response.then().body("firstname", equalTo("\"Melissa\"")
+                     , "lastname", equalTo("\"Fontai\"")
+                      ,"bookingdates.checkin", equalTo("2022-07-18")
+                      ,"bookingdates.checkout", equalTo("2022-07-22"));
 
 }
 

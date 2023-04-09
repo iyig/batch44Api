@@ -14,6 +14,22 @@ import pojos.BookingResponsePojo;
 import static io.restassured.RestAssured.given;
 
 public class PostRequestPojo02 extends HerOkuAppBaseUrl {
+/*
+      {
+     "bookingid": 11,
+            "booking": {
+                    "firstname": "Ali",
+                    "lastname": "Can",
+                    "totalprice": 500,
+                    "depositpaid": true,
+                    "bookingdates": {
+                                    "checkin": "2022-03-01",
+                                    "checkout": "2022-03-11"
+                              }
+                          }
+                      }
+     */
+
 
     @Test
     public void test(){
@@ -22,11 +38,11 @@ public class PostRequestPojo02 extends HerOkuAppBaseUrl {
         spec05.pathParam("bir", "booking");
 
         //2) EXPECTED DATA OLUSTUR
-        BookingDatesPojo bokingDates = new BookingDatesPojo("2022-03-01", "2022-03-11");
-        System.out.println("bokingDates = " + bokingDates);
+        BookingDatesPojo bookingDates = new BookingDatesPojo("2022-03-01", "2022-03-11");
+        System.out.println("bookingDates = " + bookingDates);
 
         BookingPojo bookingPojo = new BookingPojo("Ali", "Can", 500,
-                true, bokingDates);
+                true, bookingDates);
         System.out.println("bookingPojo = " + bookingPojo);
 
         //3) RESPONSE AND REQUEST

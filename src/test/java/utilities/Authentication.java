@@ -10,12 +10,16 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class Authentication {
+
     /*
         public static void main(String[] args) {
             String guncelToken = generateToken();
             System.out.println(guncelToken);
         }
     */
+
+
+
     public static String generateToken() {
         String username = "Batch44Api";
         String password = "Batch44+";

@@ -17,7 +17,7 @@ public class GetRequest20 extends JsonPlaceHolderBaseUrl {
     /*
    https://jsonplaceholder.typicode.com/todos/2
    1) Status kodunun 200,
-   2) respose body'de,
+   2) response body'de,
             "completed": değerinin false
             "title”: değerinin “quis ut nam facilis et officia qui”
             "userId" sinin 1 ve
@@ -61,7 +61,6 @@ public class GetRequest20 extends JsonPlaceHolderBaseUrl {
         Assert.assertEquals(expectedData.get("statusCode"), response.statusCode());
         Assert.assertEquals(expectedData.get("via"), response.getHeader("via"));
         Assert.assertEquals(expectedData.get("Server"), response.getHeader("Server"));
-
         Assert.assertEquals(expectedData.get("userId"), json.getInt("userId"));
         Assert.assertEquals(expectedData.get("title"), json.getString("title"));
         Assert.assertEquals(expectedData.get("completed"), json.getBoolean("completed"));

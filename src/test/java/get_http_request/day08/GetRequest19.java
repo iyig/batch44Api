@@ -62,8 +62,10 @@ public class GetRequest19 extends DummyBaseUrl {
         System.out.println(yasListesi);
 
         // yaşların içerisinde en büyük yaşın 23 olduğunu
+
         Collections.sort(yasListesi);
         Assert.assertEquals((Integer)23, yasListesi.get(yasListesi.size()-1));
+
         //Assert.assertEquals(23,(int) yasListesi.get(yasListesi.size()-1));
         //Assert.assertTrue(yasListesi.get(yasListesi.size()-1)==23);
 

@@ -21,14 +21,14 @@ public class GetRequest06 {
     @Test
     public void test06(){
 
-        Response response = given().when().get("https://restful-booker.herokuapp.com/booking/5");
+        Response response = given().when().get("https://restful-booker.herokuapp.com/booking/6");
 
         response.prettyPrint();
 
         response.then().assertThat().statusCode(200).contentType("application/json");
 
-        response.then().assertThat().body("firstname", Matchers.equalTo("Eric")
-                , "totalprice", Matchers.equalTo(948)
-                , "bookingdates.checkin", Matchers.equalTo("2017-10-28"));
+        response.then().assertThat().body("firstname", Matchers.equalTo("Mark")
+                , "totalprice", Matchers.equalTo(724)
+                , "bookingdates.checkin", Matchers.equalTo("2016-01-15"));
     }
 }

@@ -30,11 +30,14 @@ public class GetRequest08 extends DummyBaseUrl {
        // response.prettyPrint();
 
         //1) Butun calisanlarin isimlerini consola yazdıralim
+
         JsonPath json = response.jsonPath();
         System.out.println(json.getString("data.employee_name"));
         // System.out.println(json.getList("data.employee_name");
 
+
         //2) 3. calisan kisinin ismini konsola yazdıralim
+
         System.out.println(json.getString("data[2].employee_name"));
 
 
@@ -58,6 +61,6 @@ public class GetRequest08 extends DummyBaseUrl {
 
         Assert.assertEquals(200, response.getStatusCode());
         Assert.assertEquals("Ashton Cox",json.getString("data[2].employee_name"));
-        Assert.assertEquals("Doris Wildir", json.getString("data[-1].employee_name"));
+        Assert.assertEquals("Doris Wilder", json.getString("data[-1].employee_name"));
     }
 }
